@@ -1,0 +1,203 @@
+/* css/style.css */
+
+/* === Robot Intro Section (顶部区域) === */
+/* 修正：全屏背景图模式 */
+.robot-intro {
+    position: relative;
+    height: 100vh; /* 全屏高度 */
+    min-height: 700px; /* 最小高度防止内容溢出 */
+    background-image: url('https://placehold.co/1920x1080/f9f9f9/00dbbd?text=Full+Screen+Background'); /* 默认背景图占位 */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex;
+    align-items: center; /* 垂直居中内容 */
+    /* 移除之前的 padding-top，因为是全屏背景 */
+    padding-top: var(--header-height); 
+}
+
+/* 文字区域 */
+.robot-intro__content {
+    z-index: 2;
+    max-width: 600px; /* 限制宽度，使其不占满全屏 */
+    /* 如果背景图主要视觉在右边，文字通常靠左 */
+}
+
+.robot-intro__title {
+    font-size: 64px;
+    font-weight: 300;
+    color: var(--color-text-main);
+    margin-bottom: 20px;
+}
+
+/* === Robot Overview Section (新增的文字介绍板块) === */
+.robot-overview {
+    padding: 80px 0;
+    background-color: var(--color-white);
+}
+
+.robot-overview__desc {
+    font-size: 20px; /* 较大字号 */
+    color: #666; /* 灰色 */
+    line-height: 1.6;
+    margin-bottom: 60px;
+}
+
+.robot-overview__specs {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3列布局 */
+    gap: 40px;
+}
+
+.overview-spec__title {
+    display: inline-block; /* 为了背景色只包裹文字 */
+    font-size: 18px;
+    color: var(--color-primary); /* 青色文字 */
+    padding: 2px 5px; /* 稍微给点内边距 */
+    margin-bottom: 15px;
+    font-weight: 600;
+}
+
+.overview-spec__desc {
+    font-size: 14px;
+    color: #888; /* 灰色描述 */
+    line-height: 1.5;
+}
+
+/* === Robot Features Section (核心部件) === */
+.robot-features {
+    padding: 80px 0;
+    background-color: var(--color-white);
+}
+
+.robot-features__grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* 4列布局 */
+    gap: 30px;
+}
+
+.feature-card {
+    text-align: center;
+}
+
+.feature-card__image-wrapper {
+    height: 300px;
+    background-color: #f0f0f0; /* 图片占位背景 */
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.feature-card__image-wrapper img {
+    height: 100%;
+    width: auto;
+    object-fit: cover;
+}
+
+.feature-card__title {
+    font-size: 18px;
+    margin-bottom: 10px;
+    font-weight: 600;
+}
+
+.feature-card__desc {
+    font-size: 13px;
+    color: #888;
+    line-height: 1.5;
+    padding: 0 10px;
+}
+
+/* === Robot Scenario Section (应用场景) === */
+.robot-scenario {
+    padding: 80px 0;
+    background-color: #f9f9f9;
+}
+
+.robot-scenario__header {
+    margin-bottom: 40px;
+}
+
+.robot-scenario__title {
+    font-size: 32px;
+    font-weight: 400;
+}
+
+.robot-scenario__grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+}
+
+/* 复杂的网格布局模拟：左边两个竖排，右边一个大图，或者上下结构 */
+/* 根据 UI 稿，看起来是上面两张并排，下面一张大图 */
+.scenario-item {
+    position: relative;
+    overflow: hidden;
+    background: #ddd;
+}
+
+.scenario-item--large {
+    grid-column: span 2; /* 跨两列 */
+    height: 400px;
+}
+
+.scenario-item--normal {
+    height: 300px;
+}
+
+.scenario-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.scenario-item:hover img {
+    transform: scale(1.05);
+}
+
+.robot-scenario__footer {
+    margin-top: 30px;
+    font-size: 14px;
+    color: var(--color-text-light);
+    max-width: 800px;
+}
+
+/* === Responsive Style (主页响应式) === */
+@media (max-width: 1024px) {
+    .robot-intro__grid {
+        grid-template-columns: 1fr; /* 平板/手机变为单列 */
+        text-align: center;
+    }
+
+    .robot-intro__content { padding-right: 0; }
+    
+    .robot-intro__specs {
+        justify-content: center;
+        margin-bottom: 40px;
+    }
+
+    .robot-img-left { display: none; /* 窄屏隐藏次要图片 */ }
+    .robot-img-right { margin-left: 0; }
+    
+    .robot-features__grid {
+        grid-template-columns: repeat(2, 1fr); /* 特性变为2列 */
+    }
+}
+
+@media (max-width: 600px) {
+    .robot-intro__title { font-size: 42px; }
+    
+    .robot-features__grid {
+        grid-template-columns: 1fr; /* 手机变为1列 */
+    }
+    
+    .robot-scenario__grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .scenario-item--large { grid-column: span 1; }
+}

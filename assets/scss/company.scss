@@ -1,0 +1,201 @@
+// Company Page Styles
+
+/* === Hero Section === */
+.company-hero {
+  width: 100%;
+  height: 60vh;
+  min-height: 500px;
+  position: relative;
+  overflow: hidden;
+  
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}
+
+/* === About Section === */
+.company-about {
+  padding: 80px 0;
+  background-color: #fff;
+}
+
+.company-about__title {
+  font-size: 48px;
+  font-weight: 300;
+  margin-bottom: 30px;
+  color: #333;
+  
+  span {
+    color: var(--color-primary); /* Highlight dot */
+  }
+}
+
+.company-about__desc {
+  font-size: 18px;
+  line-height: 1.8;
+  color: #666;
+  max-width: 900px;
+}
+
+/* === Gallery Section === */
+.company-gallery {
+  padding-bottom: 80px;
+}
+
+.company-gallery__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.gallery-image {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+  border-radius: 4px;
+}
+
+/* === Philosophy & Opportunity Section === */
+.company-philosophy {
+  padding: 80px 0;
+  background-color: #f9f9f9;
+}
+
+.philosophy-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+}
+
+.philosophy-item {
+  display: flex;
+  gap: 30px;
+}
+
+.philosophy-icon {
+  width: 80px;
+  height: 80px;
+  flex-shrink: 0;
+  
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+}
+
+.philosophy-content {
+  h3 {
+    font-size: 24px;
+    margin-bottom: 15px;
+    color: #333;
+  }
+  
+  p {
+    font-size: 15px;
+    line-height: 1.6;
+    color: #666;
+  }
+}
+
+.opportunity-item {
+  h3 {
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: #333;
+  }
+  
+  ul {
+    list-style: none;
+    padding: 0;
+    
+    li {
+      position: relative;
+      padding-left: 20px;
+      margin-bottom: 10px;
+      font-size: 15px;
+      color: #666;
+      line-height: 1.6;
+      
+      &::before {
+        content: '•';
+        position: absolute;
+        left: 0;
+        color: var(--color-primary);
+      }
+    }
+  }
+  
+  .highlight-text {
+    margin-top: 20px;
+    color: var(--color-primary);
+    font-size: 14px;
+    line-height: 1.6;
+  }
+}
+
+/* === Values Section === */
+.company-values {
+  padding: 80px 0;
+  background-color: #fff;
+}
+
+.values-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 40px;
+}
+
+.value-item {
+  h3 {
+    font-size: 20px;
+    margin-bottom: 20px;
+    color: #333;
+    font-weight: 600;
+  }
+  
+  p {
+    font-size: 14px;
+    line-height: 1.6;
+    color: #666;
+  }
+}
+
+/* === Responsive Styles === */
+@media (max-width: 1024px) {
+  .company-gallery__grid {
+    grid-template-columns: repeat(3, 1fr); /* Keep 3 columns on tablet or maybe 2? 3 looks fine for images */
+  }
+  
+  .philosophy-grid {
+    gap: 40px;
+  }
+}
+
+@media (max-width: 768px) {
+  .company-hero {
+    height: 40vh;
+    min-height: 300px;
+  }
+
+  .company-about__title {
+    font-size: 36px;
+  }
+  
+  .company-gallery__grid {
+    grid-template-columns: 1fr; /* Stack images on mobile */
+    gap: 15px;
+  }
+  
+  .philosophy-grid {
+    grid-template-columns: 1fr; /* Stack columns */
+    gap: 40px;
+  }
+  
+  .values-grid {
+    grid-template-columns: 1fr; /* Stack columns */
+    gap: 40px;
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "nav": {
+    "intelligence": "智能",
+    "solution": "解决方案",
+    "company": "公司",
+    "news": "新闻",
+    "careers": "招聘"
+  },
+  "home": {
+    "title": "智能",
+    "description": "欢迎来到智能模块。"
+  },
+  "solution": {
+    "title": "解决方案",
+    "description": "我们的解决方案。"
+  },
+  "company": {
+    "title": "公司",
+    "description": "关于我们。"
+  },
+  "news": {
+    "title": "新闻",
+    "description": "最新新闻。"
+  },
+  "careers": {
+    "title": "招聘",
+    "description": "加入我们。"
+  }
+}

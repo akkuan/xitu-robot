@@ -1,0 +1,181 @@
+// Intelligence Page Styles
+
+/* === Hero Section === */
+.intelligence-hero {
+  background-color: #000;
+  color: #fff;
+  padding: 120px 0 80px; /* Top padding for header space */
+  position: relative;
+  overflow: hidden;
+}
+
+.intelligence-hero__content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 60px;
+}
+
+.intelligence-hero__text {
+  flex: 1;
+  max-width: 600px;
+}
+
+.intelligence-hero__title {
+  font-size: 64px;
+  font-weight: 300;
+  margin-bottom: 30px;
+  line-height: 1.1;
+  
+  span {
+    color: var(--color-primary); /* Highlight dot */
+  }
+}
+
+.intelligence-hero__desc {
+  font-size: 18px;
+  line-height: 1.6;
+  color: #ccc;
+  max-width: 500px;
+}
+
+.intelligence-hero__visual {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+  img {
+    max-width: 100%;
+    height: auto;
+    /* Optional: Add a subtle glow or effect for the X logo */
+  }
+}
+
+/* === Flowchart Section === */
+.intelligence-flow {
+  padding: 80px 0;
+  background-color: #fff;
+  text-align: center;
+}
+
+.intelligence-flow__image {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+}
+
+/* === Features Grid Section === */
+.intelligence-features {
+  padding: 60px 0 100px;
+  background-color: #fff;
+}
+
+.intelligence-features__grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 40px;
+}
+
+.feature-item {
+  text-align: left;
+}
+
+.feature-item__icon {
+  width: 60px;
+  height: 60px;
+  margin-bottom: 20px;
+  
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+}
+
+.feature-item__title {
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 10px;
+  color: #333;
+}
+
+.feature-item__desc {
+  font-size: 14px;
+  color: #666;
+  line-height: 1.5;
+}
+
+/* === Gallery Section === */
+.intelligence-gallery {
+  display: flex;
+  width: 100%;
+  background-color: #000; /* Dark background for gallery strip */
+}
+
+.gallery-item {
+  flex: 1;
+  height: 300px; /* Fixed height for the strip */
+  position: relative;
+  overflow: hidden;
+  
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+  }
+  
+  &:hover img {
+    transform: scale(1.05);
+  }
+}
+
+/* === Responsive Styles === */
+@media (max-width: 1024px) {
+  .intelligence-hero__title {
+    font-size: 48px;
+  }
+  
+  .intelligence-features__grid {
+    grid-template-columns: repeat(2, 1fr); /* 2 columns on tablet */
+    gap: 30px;
+  }
+}
+
+@media (max-width: 768px) {
+  .intelligence-hero {
+    padding-top: 100px;
+    text-align: center;
+  }
+
+  .intelligence-hero__content {
+    flex-direction: column;
+    gap: 40px;
+  }
+
+  .intelligence-hero__text {
+    max-width: 100%;
+  }
+
+  .intelligence-hero__title {
+    font-size: 36px;
+  }
+  
+  .intelligence-hero__desc {
+    margin: 0 auto;
+  }
+
+  .intelligence-features__grid {
+    grid-template-columns: 1fr; /* 1 column on mobile */
+  }
+  
+  .intelligence-gallery {
+    flex-direction: column; /* Stack images on mobile */
+  }
+  
+  .gallery-item {
+    height: 250px;
+  }
+}

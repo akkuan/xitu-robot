@@ -1,0 +1,29 @@
+{
+  "nav": {
+    "intelligence": "Intelligence",
+    "solution": "Solution",
+    "company": "Company",
+    "news": "News",
+    "careers": "Careers"
+  },
+  "home": {
+    "title": "Intelligence",
+    "description": "Welcome to the Intelligence module."
+  },
+  "solution": {
+    "title": "Solution",
+    "description": "Our Solutions."
+  },
+  "company": {
+    "title": "Company",
+    "description": "About our Company."
+  },
+  "news": {
+    "title": "News",
+    "description": "Latest News."
+  },
+  "careers": {
+    "title": "Careers",
+    "description": "Join our Team."
+  }
+}
