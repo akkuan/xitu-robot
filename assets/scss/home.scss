@@ -37,7 +37,7 @@
 }
 
 .robot-overview__desc {
-  font-size: 20px; /* 较大字号 */
+  font-size: 22px; /* 较大字号 */
   color: #666; /* 灰色 */
   line-height: 1.6;
   margin-bottom: 60px;
@@ -51,7 +51,7 @@
 
 .overview-spec__title {
   display: inline-block; /* 为了背景色只包裹文字 */
-  font-size: 18px;
+  font-size: 22px;
   color: var(--color-primary); /* 青色文字 */
   padding: 2px 5px; /* 稍微给点内边距 */
   margin-bottom: 15px;
@@ -59,7 +59,7 @@
 }
 
 .overview-spec__desc {
-  font-size: 14px;
+  font-size: 16px;
   color: #888; /* 灰色描述 */
   line-height: 1.5;
 }
@@ -98,13 +98,13 @@
 }
 
 .feature-card__title {
-  font-size: 18px;
+  font-size: 24px;
   margin-bottom: 10px;
   font-weight: 600;
 }
 
 .feature-card__desc {
-  font-size: 13px;
+  font-size: 16px;
   color: #888;
   line-height: 1.5;
   padding: 0 10px;
@@ -121,7 +121,7 @@
 }
 
 .robot-scenario__title {
-  font-size: 32px;
+  font-size: 40px;
   font-weight: 400;
 }
 

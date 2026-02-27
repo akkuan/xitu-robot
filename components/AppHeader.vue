@@ -1,5 +1,5 @@
 <template>
-  <header class="site-header" :class="{ 'site-header--dark': theme === 'dark' }">
+  <header class="site-header" :class="{ 'site-header--dark': theme === 'dark' }" :style="{ '--nav-text-color': navColor }">
     <!-- 导航菜单：左侧 -->
     <nav class="site-nav">
       <ul class="site-nav__list">
@@ -17,11 +17,11 @@
     <!-- Logo：右侧 -->
     <div class="site-header__right" style="display: flex; align-items: center; gap: 20px;">
       <div class="lang-switch">
-        <NuxtLink :to="switchLocalePath('en')" :class="{ active: $i18n.locale === 'en' }" style="margin-right: 5px; cursor: pointer; font-size: 14px;">EN</NuxtLink>
-        <span style="color: #ccc;">|</span>
-        <NuxtLink :to="switchLocalePath('zh')" :class="{ active: $i18n.locale === 'zh' }" style="margin-left: 5px; cursor: pointer; font-size: 14px;">中文</NuxtLink>
+        <NuxtLink :to="switchLocalePath('en')" :class="{ active: $i18n.locale === 'en' }" :style="{ color: navColor, marginRight: '5px', cursor: 'pointer', fontSize: '18px' }">EN</NuxtLink>
+        <span :style="{ color: navColor, fontSize: '18px' }">|</span>
+        <NuxtLink :to="switchLocalePath('zh')" :class="{ active: $i18n.locale === 'zh' }" :style="{ color: navColor, marginLeft: '5px', cursor: 'pointer', fontSize: '18px' }">中文</NuxtLink>
       </div>
-      <div class="site-header__logo">Xitu</div>
+      <div class="site-header__logo" :style="{ color: navColor, fontSize: '28px' }">Xitu</div>
     </div>
 
     <!-- 移动端菜单按钮 -->
@@ -30,11 +30,27 @@
 </template>
 
 <script setup>
+import { computed } from 'vue'
+import { useRoute } from 'vue-router'
+
 const props = defineProps({
   theme: {
     type: String,
     default: 'light'
   }
+})
+
+const route = useRoute()
+
+const navColor = computed(() => {
+  const path = route.path
+  if (path === '/' || path.startsWith('/skywalker')) return 'rgb(209, 209, 209)'
+  if (path.startsWith('/intelligence')) return 'rgb(209, 209, 209)'
+  if (path.startsWith('/solution')) return 'rgb(255, 255, 255)'
+  if (path.startsWith('/company')) return 'rgb(96, 96, 96)'
+  if (path.startsWith('/news')) return 'rgb(209, 209, 209)'
+  if (path.startsWith('/careers')) return 'rgb(209, 209, 209)'
+  return 'rgb(209, 209, 209)' // default
 })
 
 const localePath = useLocalePath()

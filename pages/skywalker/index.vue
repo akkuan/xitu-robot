@@ -2,10 +2,8 @@
   <div class="page-home">
     <!-- Section 1: Robot Intro (全屏 Banner) -->
     <section class="robot-intro">
-      <div class="container">
-        <div class="robot-intro__content">
-          <h1 class="robot-intro__title">Skywalker</h1>
-        </div>
+      <div class="robot-intro__content" style="padding-left: 5%; width: 100%;">
+        <h1 class="robot-intro__title">Skywalker<span class="dot">.</span></h1>
       </div>
     </section>
 
@@ -52,14 +50,13 @@
           <article class="feature-card">
             <div class="feature-card__image-wrapper">
               <img
-                src="https://placehold.co/300x400/eee/333?text=Head+Sensor"
-                alt="Head"
+                src="~/assets/images/skywaller/heart.png"
+                alt="Heart"
               />
             </div>
-            <h3 class="feature-card__title">Head</h3>
+            <h3 class="feature-card__title">Heart</h3>
             <p class="feature-card__desc">
-              Equipped with 3D depth cameras and high-precision sensors for
-              spatial awareness.
+              Equipped with an Nvidia Jetson AGX-Orin 64G processor, providing high computing power, strong performance, and enhanced intelligence.
             </p>
           </article>
 
@@ -67,14 +64,13 @@
           <article class="feature-card">
             <div class="feature-card__image-wrapper">
               <img
-                src="https://placehold.co/300x400/eee/333?text=Optic+System"
-                alt="Optic"
+                src="~/assets/images/skywaller/eyes.png"
+                alt="Eyes"
               />
             </div>
-            <h3 class="feature-card__title">Optic</h3>
+            <h3 class="feature-card__title">Eyes</h3>
             <p class="feature-card__desc">
-              Advanced visual processing unit enabling real-time object
-              recognition.
+              Equipped with multiple full-scene stereo 3D cameras, offering an ultra-wide field of view, excellent depth perception, and multi-modal scene awareness.
             </p>
           </article>
 
@@ -82,14 +78,13 @@
           <article class="feature-card">
             <div class="feature-card__image-wrapper">
               <img
-                src="https://placehold.co/300x400/eee/333?text=Dexterous+Hand"
+                src="~/assets/images/skywaller/hands.png"
                 alt="Hands"
               />
             </div>
             <h3 class="feature-card__title">Hands</h3>
             <p class="feature-card__desc">
-              12 degrees of freedom with tactile feedback for delicate
-              manipulation.
+              Equipped with various types of end effectors, allowing for flexible switching and adaptation to multiple scenarios and target objects.
             </p>
           </article>
 
@@ -97,14 +92,13 @@
           <article class="feature-card">
             <div class="feature-card__image-wrapper">
               <img
-                src="https://placehold.co/300x400/eee/333?text=Joint+Base"
-                alt="Joint"
+                src="~/assets/images/skywaller/waist.png"
+                alt="Waist"
               />
             </div>
-            <h3 class="feature-card__title">Joint</h3>
+            <h3 class="feature-card__title">Waist</h3>
             <p class="feature-card__desc">
-              High-torque joint modules ensuring stability and powerful
-              movement.
+              Features a flexible 3-degree-of-freedom (vertical lifting + Pitch + Yaw) waist, with a multi-stage articulated lifting mechanism for greater load capacity and lower energy consumption.
             </p>
           </article>
         </div>
@@ -115,37 +109,35 @@
     <section class="robot-scenario">
       <div class="container">
         <div class="robot-scenario__header">
-          <h2 class="robot-scenario__title">Skywalker in the Role</h2>
+          <h2 class="robot-scenario__title">Skywalker in the Field</h2>
         </div>
 
         <div class="robot-scenario__grid">
           <!-- 上排两张图 -->
           <div class="scenario-item scenario-item--normal">
             <img
-              src="https://placehold.co/600x400/333/fff?text=Factory+Assembly"
+              src="~/assets/images/skywaller/field-left.png"
               alt="Factory"
             />
           </div>
           <div class="scenario-item scenario-item--normal">
             <img
-              src="https://placehold.co/600x400/444/fff?text=Lab+Research"
+              src="~/assets/images/skywaller/field-right.png"
               alt="Lab"
             />
           </div>
           <!-- 下排大图 -->
           <div class="scenario-item scenario-item--large">
             <img
-              src="https://placehold.co/1200x600/222/00dbbd?text=Industrial+Integration"
+              src="~/assets/images/skywaller/field-bottom.png"
               alt="Integration"
             />
           </div>
         </div>
 
         <div class="robot-scenario__footer">
-          <p>
-            A ready-to-use executive in various scenarios like operations,
-            bio-chemical handling, agile logistics, and high-precision
-            automation control.
+          <p class="scenario-footer-text">
+            Already live in production in logistics, manufacturing operations, Skywalker achieves high-precision, high-efficiency, and highly generalizable motion control.
           </p>
         </div>
       </div>
@@ -154,6 +146,10 @@
 </template>
 
 <script setup>
+definePageMeta({
+  path: '/',
+})
+
 useHead({
   title: 'XITU | Skywalker Intelligent Robot',
   meta: [
@@ -164,4 +160,34 @@ useHead({
 
 <style lang="scss" scoped>
 // Page specific styles are mostly in assets/scss/home.scss
+.robot-intro {
+  background-image: url('~/assets/images/skywaller/hero.png') !important;
+}
+
+.robot-intro__title {
+  font-size: 35px !important;
+  color: #ffffff !important;
+  font-weight: 500;
+  margin-bottom: 0;
+  margin-top: -15vh; /* Move it up */
+  
+  .dot {
+    color: var(--color-primary);
+  }
+}
+
+.scenario-footer-text {
+  font-size: 22px;
+  line-height: 1.6;
+}
+
+@media (max-width: 768px) {
+  .robot-intro__title {
+    font-size: 28px !important;
+    margin-top: -10vh;
+  }
+  .scenario-footer-text {
+    font-size: 18px;
+  }
+}
 </style>
