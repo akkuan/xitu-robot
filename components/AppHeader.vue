@@ -1,5 +1,5 @@
 <template>
-  <header class="site-header">
+  <header class="site-header" :class="{ 'site-header--dark': theme === 'dark' }">
     <!-- 导航菜单：左侧 -->
     <nav class="site-nav">
       <ul class="site-nav__list">
@@ -30,6 +30,13 @@
 </template>
 
 <script setup>
+const props = defineProps({
+  theme: {
+    type: String,
+    default: 'light'
+  }
+})
+
 const localePath = useLocalePath()
 const switchLocalePath = useSwitchLocalePath()
 </script>

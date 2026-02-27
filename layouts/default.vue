@@ -1,18 +1,23 @@
 <template>
   <div class="layout-default">
     <!-- Header: 独立模块 -->
-    <AppHeader />
+    <AppHeader :theme="currentTheme" />
 
     <main>
       <slot />
     </main>
 
-    <AppFooter />
+    <AppFooter :theme="currentTheme" />
   </div>
 </template>
 
 <script setup>
-// No script needed for now as header logic moved to AppHeader
+const route = useRoute()
+
+// Compute theme based on route meta, default to 'light'
+const currentTheme = computed(() => {
+  return route.meta.theme || 'light'
+})
 </script>
 
 <style lang="scss" scoped>

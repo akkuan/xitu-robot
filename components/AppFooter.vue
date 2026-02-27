@@ -1,6 +1,6 @@
 <template>
   <!-- Footer: 独立模块 -->
-  <footer class="site-footer">
+  <footer class="site-footer" :class="{ 'site-footer--dark': theme === 'dark' }">
     <div class="container">
       <div class="site-footer__content">
         <!-- 左侧区域：链接 + Logo -->
@@ -11,7 +11,7 @@
           </div>
           <div class="site-footer__links">
             <NuxtLink :to="localePath('/')" class="site-footer__link">Skywalker</NuxtLink>
-            <NuxtLink :to="localePath('/')" class="site-footer__link">{{ $t('nav.intelligence') }}</NuxtLink>
+            <NuxtLink :to="localePath('/intelligence')" class="site-footer__link">{{ $t('nav.intelligence') }}</NuxtLink>
             <NuxtLink :to="localePath('/solution')" class="site-footer__link">{{ $t('nav.solution') }}</NuxtLink>
             <NuxtLink :to="localePath('/company')" class="site-footer__link">{{ $t('nav.company') }}</NuxtLink>
             <NuxtLink :to="localePath('/news')" class="site-footer__link">{{ $t('nav.news') }}</NuxtLink>
@@ -41,5 +41,12 @@
 </template>
 
 <script setup>
+const props = defineProps({
+  theme: {
+    type: String,
+    default: 'light'
+  }
+})
+
 const localePath = useLocalePath()
 </script>

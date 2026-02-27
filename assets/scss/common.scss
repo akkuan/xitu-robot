@@ -63,6 +63,34 @@ img {
   align-items: center;
   justify-content: space-between;
   padding: 0 5%; /* 稍微宽一点的 padding */
+  transition: background-color 0.3s ease;
+}
+
+/* Dark Theme Header */
+.site-header--dark {
+  background-color: rgba(0, 0, 0, 0.8);
+  backdrop-filter: blur(10px);
+
+  .site-header__logo {
+    color: #fff;
+  }
+
+  .site-nav__link {
+    color: #ccc;
+
+    &:hover,
+    &.router-link-active {
+      color: #fff;
+    }
+  }
+
+  .lang-switch a {
+    color: #ccc;
+
+    &.active {
+      color: #fff;
+    }
+  }
 }
 
 /* 导航在左，Logo 在右 */
@@ -101,6 +129,43 @@ img {
   padding: 80px 0 40px;
   background-color: var(--color-white);
   border-top: 1px solid #eee;
+  transition:
+    background-color 0.3s ease,
+    color 0.3s ease;
+}
+
+/* Dark Theme Footer */
+.site-footer--dark {
+  background-color: #000;
+  color: #fff;
+  border-top: 1px solid #333;
+
+  .site-footer__logo h2 {
+    color: #fff;
+  }
+
+  .site-footer__link {
+    color: #ccc;
+    border-bottom-color: #333;
+
+    &:hover {
+      color: #fff;
+    }
+  }
+
+  .site-footer__bottom {
+    color: #666;
+    border-top-color: #333;
+  }
+
+  .newsletter-form input {
+    background-color: #333;
+    color: #fff;
+
+    &::placeholder {
+      color: #999;
+    }
+  }
 }
 
 .site-footer__content {

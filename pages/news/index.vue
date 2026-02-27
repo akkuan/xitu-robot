@@ -43,7 +43,7 @@
 </template>
 
 <script setup>
-import { ref, computed, onMounted, onUnmounted } from 'vue'
+import { ref, computed } from 'vue'
 
 useHead({
   title: 'XITU | News',
@@ -52,13 +52,8 @@ useHead({
   ]
 })
 
-// Add body class for dark theme
-onMounted(() => {
-  document.body.classList.add('theme-dark')
-})
-
-onUnmounted(() => {
-  document.body.classList.remove('theme-dark')
+definePageMeta({
+  theme: 'dark'
 })
 
 // Mock Data

@@ -8,33 +8,6 @@
   padding-top: var(--header-height); /* Ensure content starts below header */
 }
 
-/* Override Header for Dark Theme using Body Class */
-body.theme-dark {
-  .site-header {
-    background-color: rgba(0, 0, 0, 0.8); /* Semi-transparent black */
-    backdrop-filter: blur(10px);
-  }
-
-  .site-nav__link {
-    color: #ccc; /* Light grey for nav links */
-    
-    &:hover,
-    &.router-link-active {
-      color: #fff; /* White for active/hover */
-    }
-  }
-
-  .site-header__logo {
-    color: #fff;
-  }
-  
-  .lang-switch a {
-    color: #ccc;
-    &.active {
-      color: #fff;
-    }
-  }
-}
 
 /* === News Grid Section === */
 .news-container {
