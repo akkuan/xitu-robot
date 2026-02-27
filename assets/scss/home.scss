@@ -38,7 +38,7 @@
 
 .robot-overview__desc {
   font-size: 22px; /* 较大字号 */
-  color: #666; /* 灰色 */
+  color: rgb(96, 96, 96);
   line-height: 1.6;
   margin-bottom: 60px;
 }
@@ -60,7 +60,7 @@
 
 .overview-spec__desc {
   font-size: 16px;
-  color: #888; /* 灰色描述 */
+  color: rgb(96, 96, 96);
   line-height: 1.5;
 }
 
@@ -72,8 +72,8 @@
 
 .robot-features__grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr); /* 4列布局 */
-  gap: 30px;
+  grid-template-columns: repeat(4, 1fr); /* 4列布局，左右间距很小 */
+  gap: 8px;
 }
 
 .feature-card {
@@ -81,20 +81,17 @@
 }
 
 .feature-card__image-wrapper {
-  height: 300px;
-  background-color: #f0f0f0; /* 图片占位背景 */
+  height: 420px;
   margin-bottom: 20px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 4px;
   overflow: hidden;
+  /* 无灰色背景，超出部分裁切 */
 }
 
 .feature-card__image-wrapper img {
+  width: 100%;
   height: 100%;
-  width: auto;
   object-fit: cover;
+  /* 图片放大填满容器，超出裁切 */
 }
 
 .feature-card__title {
@@ -105,7 +102,7 @@
 
 .feature-card__desc {
   font-size: 16px;
-  color: #888;
+  color: rgb(96, 96, 96);
   line-height: 1.5;
   padding: 0 10px;
 }

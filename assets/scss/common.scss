@@ -71,24 +71,16 @@ img {
   background-color: rgba(0, 0, 0, 0.8);
   backdrop-filter: blur(10px);
 
-  .site-header__logo {
-    color: #fff;
-  }
-
   .site-nav__link {
-    color: #ccc;
-
     &:hover,
     &.router-link-active {
-      color: #fff;
+      color: var(--color-primary);
     }
   }
 
   .lang-switch a {
-    color: #ccc;
-
     &.active {
-      color: #fff;
+      color: var(--color-primary);
     }
   }
 }
@@ -103,10 +95,16 @@ img {
   gap: 40px;
 }
 
+.site-header__right,
+.site-header__right .site-header__logo,
+.site-header__right .lang-switch a,
+.site-header__right .lang-switch-sep {
+  color: var(--nav-text-color, rgb(96, 96, 96));
+}
+
 .site-header__logo {
   font-size: 24px;
   font-weight: bold;
-  color: var(--color-text-main); /* 根据背景图可能需要调整为白色 */
   letter-spacing: 2px;
   text-transform: uppercase;
   text-align: right;

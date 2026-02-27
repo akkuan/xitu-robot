@@ -17,11 +17,11 @@
     <!-- Logo：右侧 -->
     <div class="site-header__right" style="display: flex; align-items: center; gap: 20px;">
       <div class="lang-switch">
-        <NuxtLink :to="switchLocalePath('en')" :class="{ active: $i18n.locale === 'en' }" :style="{ color: navColor, marginRight: '5px', cursor: 'pointer', fontSize: '18px' }">EN</NuxtLink>
-        <span :style="{ color: navColor, fontSize: '18px' }">|</span>
-        <NuxtLink :to="switchLocalePath('zh')" :class="{ active: $i18n.locale === 'zh' }" :style="{ color: navColor, marginLeft: '5px', cursor: 'pointer', fontSize: '18px' }">中文</NuxtLink>
+        <NuxtLink :to="switchLocalePath('en')" :class="{ active: $i18n.locale === 'en' }" style="margin-right: 5px; cursor: pointer; font-size: 18px;">EN</NuxtLink>
+        <span class="lang-switch-sep" style="font-size: 18px;">|</span>
+        <NuxtLink :to="switchLocalePath('zh')" :class="{ active: $i18n.locale === 'zh' }" style="margin-left: 5px; cursor: pointer; font-size: 18px;">中文</NuxtLink>
       </div>
-      <div class="site-header__logo" :style="{ color: navColor, fontSize: '28px' }">Xitu</div>
+      <div class="site-header__logo" style="font-size: 28px;">Xitu</div>
     </div>
 
     <!-- 移动端菜单按钮 -->
@@ -30,9 +30,6 @@
 </template>
 
 <script setup>
-import { computed } from 'vue'
-import { useRoute } from 'vue-router'
-
 const props = defineProps({
   theme: {
     type: String,
@@ -41,7 +38,6 @@ const props = defineProps({
 })
 
 const route = useRoute()
-
 const navColor = computed(() => {
   const path = route.path
   if (path === '/' || path.startsWith('/skywalker')) return 'rgb(209, 209, 209)'
