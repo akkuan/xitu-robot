@@ -2,80 +2,54 @@
 
 /* === Hero Section === */
 .intelligence-hero {
-  background-color: #000;
-  color: #fff;
-  padding: 120px 0 80px; /* Top padding for header space */
   position: relative;
-  overflow: hidden;
-}
-
-.intelligence-hero__content {
+  height: 100vh;
+  min-height: 700px;
+  background-size: cover;
+  background-position: center calc(var(--header-height) - 36px); /* Move image down */
+  background-repeat: no-repeat;
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  gap: 60px;
-}
-
-.intelligence-hero__text {
-  flex: 1;
-  max-width: 600px;
+  padding-top: calc(var(--header-height) + 40px); /* Push content down */
+  background-color: rgb(27, 27, 28);
 }
 
 .intelligence-hero__title {
-  font-size: 64px;
-  font-weight: 300;
-  margin-bottom: 30px;
-  line-height: 1.1;
-  
-  span {
-    color: var(--color-primary); /* Highlight dot */
-  }
+  /* Removed local font-size/margin overrides to use global HeroTitle styling */
 }
 
-.intelligence-hero__desc {
-  font-size: 18px;
+.intelligence-desc {
+  background-color: rgb(27, 27, 28);
+  padding: 60px 5%;
+  position: absolute;
+  bottom: 0;
+}
+
+.hero-desc {
+  font-size: 24px;
   line-height: 1.6;
-  color: #ccc;
-  max-width: 500px;
-}
-
-.intelligence-hero__visual {
-  flex: 1;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  
-  img {
-    max-width: 100%;
-    height: auto;
-    /* Optional: Add a subtle glow or effect for the X logo */
-  }
+  color: rgb(127, 128, 129);
+  max-width: 900px;
+  margin: 0;
 }
 
 /* === Flowchart Section === */
 .intelligence-flow {
   padding: 80px 0;
-  background-color: #fff;
+  background-color: rgb(27, 27, 28);
   text-align: center;
-}
-
-.intelligence-flow__image {
-  max-width: 100%;
-  height: auto;
-  border-radius: 8px;
-  box-shadow: 0 4px 20px rgba(0,0,0,0.05);
 }
 
 /* === Features Grid Section === */
 .intelligence-features {
   padding: 60px 0 100px;
-  background-color: #fff;
+  background-color: rgb(27, 27, 28);
 }
 
 .intelligence-features__grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 40px;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 60px 40px;
 }
 
 .feature-item {
@@ -86,7 +60,7 @@
   width: 60px;
   height: 60px;
   margin-bottom: 20px;
-  
+
   img {
     width: 100%;
     height: 100%;
@@ -95,15 +69,15 @@
 }
 
 .feature-item__title {
-  font-size: 18px;
+  font-size: 24px;
   font-weight: 600;
-  margin-bottom: 10px;
+  margin-bottom: 15px;
   color: #333;
 }
 
 .feature-item__desc {
-  font-size: 14px;
-  color: #666;
+  font-size: 18px;
+  color: rgb(96, 96, 96);
   line-height: 1.5;
 }
 
@@ -111,33 +85,53 @@
 .intelligence-gallery {
   display: flex;
   width: 100%;
-  background-color: #000; /* Dark background for gallery strip */
+  background-color: rgb(27, 27, 28);
+  gap: 20px;
+  padding: 40px 20px;
 }
 
 .gallery-item {
   flex: 1;
-  height: 300px; /* Fixed height for the strip */
+  height: 600px;
   position: relative;
   overflow: hidden;
-  
+  background-color: rgb(27, 27, 28);
+
   img {
     width: 100%;
     height: 100%;
     object-fit: cover;
     transition: transform 0.5s ease;
+    display: block;
+    transform: scale(1.01); /* Hide potential white edges from image assets */
   }
-  
+
   &:hover img {
-    transform: scale(1.05);
+    transform: scale(1.06);
   }
 }
 
 /* === Responsive Styles === */
 @media (max-width: 1024px) {
-  .intelligence-hero__title {
-    font-size: 48px;
+  .hero-box {
+    margin: 0 20px;
+    padding: 40px 20px;
   }
-  
+
+  .hero-box__title {
+    font-size: 28px;
+  }
+
+  .hero-box__icon {
+    width: 200px;
+    height: 200px;
+  }
+
+  .hero-desc-container {
+    margin: 30px 20px 0;
+    padding: 0 20px;
+  }
+
   .intelligence-features__grid {
     grid-template-columns: repeat(2, 1fr); /* 2 columns on tablet */
     gap: 30px;
@@ -150,32 +144,34 @@
     text-align: center;
   }
 
-  .intelligence-hero__content {
+  .hero-box {
     flex-direction: column;
     gap: 40px;
   }
 
-  .intelligence-hero__text {
-    max-width: 100%;
+  .hero-box__right {
+    justify-content: center;
+    padding-right: 0;
   }
 
-  .intelligence-hero__title {
-    font-size: 36px;
+  .hero-box__title {
+    font-size: 24px;
   }
-  
-  .intelligence-hero__desc {
+
+  .hero-desc {
     margin: 0 auto;
+    font-size: 18px;
   }
 
   .intelligence-features__grid {
     grid-template-columns: 1fr; /* 1 column on mobile */
   }
-  
+
   .intelligence-gallery {
     flex-direction: column; /* Stack images on mobile */
   }
-  
+
   .gallery-item {
-    height: 250px;
+    height: 350px;
   }
 }

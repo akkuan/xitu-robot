@@ -3,24 +3,15 @@
 /* === Hero Section === */
 .solution-hero {
   position: relative;
-  height: 60vh;
-  min-height: 500px;
-  background-image: url('https://placehold.co/1920x1080/003366/ffffff?text=XITU+Solution+Banner');
+  height: 100vh;
+  min-height: 700px;
   background-size: cover;
   background-position: center;
+  background-repeat: no-repeat;
   display: flex;
   align-items: center;
-  color: #fff;
-  /* Overlay for better text readability if needed */
-  &::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.3); 
-  }
+  padding-top: var(--header-height);
+  background-color: rgb(27, 27, 28);
 }
 
 .solution-hero__content {
@@ -29,9 +20,7 @@
 }
 
 .solution-hero__title {
-  font-size: 64px;
-  font-weight: 300;
-  margin-bottom: 20px;
+  /* Removed local font-size/margin overrides to use global HeroTitle styling */
 }
 
 /* === Video Section === */
@@ -56,15 +45,17 @@
 
 /* === Intro Text Section === */
 .solution-intro {
-  padding: 40px 0 60px;
+  padding: 80px 0 60px;
   background-color: #fff;
 }
 
 .solution-intro__text {
-  max-width: 800px;
-  font-size: 18px;
+  max-width: 1000px;
+  margin: 0 auto;
+  font-size: 22px;
   line-height: 1.6;
-  color: #666;
+  color: rgb(96, 96, 96);
+  text-align: center;
 }
 
 /* === Products Section === */
@@ -77,44 +68,124 @@
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 40px;
-  margin-bottom: 80px; /* Space between the two rows */
+  margin-bottom: 80px;
+}
+
+.product-column {
+  display: flex;
+  flex-direction: column;
+  position: relative; /* For absolute positioning of the connector */
+  padding-left: 30px; /* Make room for the absolute connector */
 }
 
 .product-item {
-  text-align: center;
+  text-align: left;
+}
+
+.product-image-box {
+  width: 60%;
+  border: 1px solid rgb(96, 96, 96);
+  border-bottom: none;
+  background-color: #f9f9f9;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden; /* Prevent image from spilling out when scaled */
 }
 
 .product-item__image {
   width: 100%;
-  height: 400px;
-  object-fit: contain;
-  margin-bottom: 20px;
-  background-color: #f9f9f9; /* Placeholder background */
+  /* Use aspect-ratio 4/10 to make it very tall as requested, 
+     but setting a large height is usually safer if aspect-ratio isn't ideal. 
+     Using an arbitrary tall height like 500px to ensure it fills up vertically */
+  // height: 500px;
+  object-fit: cover; /* This makes it fill width/height completely without white bars, cropping as needed */
+  display: block;
 }
 
 .product-item__label {
-  display: inline-block;
-  background-color: #333;
+  width: 60%;
+  background-color: #606060;
   color: #fff;
-  padding: 8px 20px;
+  text-align: center;
+  padding: 15px 0;
+  font-size: 25px;
+  margin-bottom: 20px;
+  font-weight: bold;
+}
+
+.product-item__list {
+  padding-left: 20px;
+  margin-bottom: 20px;
+  list-style-type: none;
+  min-height: 420px; /* Force consistent height so bottom images align perfectly at the top */
+}
+
+.product-item__list li {
   font-size: 16px;
-  margin-bottom: 15px;
-  border-radius: 2px;
+  color: rgb(96, 96, 96);
+  line-height: 1.6;
+  position: relative;
+  margin-bottom: 8px;
+}
+
+.product-item__list li::before {
+  content: "•";
+  position: absolute;
+  left: -15px;
+  color: rgb(96, 96, 96);
+}
+
+.column-connector {
+  position: absolute;
+  left: -20px;
+  top: 32%;
+  bottom: 22%;
+  width: 2px;
+  background-color: #606060;
+}
+
+.column-connector::after {
+  content: "";
+  position: absolute;
+  bottom: -6px;
+  left: -4px;
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  border-top: 6px solid rgb(96, 96, 96);
+}
+
+.product-column {
+  display: flex;
+  flex-direction: column;
+  position: relative; /* For absolute positioning of the connector */
+  padding-left: 30px; /* Make room for the absolute connector */
+}
+
+.product-item {
+  text-align: left;
+}
+
+.product-item__image-bottom {
+  width: 100%;
+  height: 350px;
+  height: auto;
+  max-height: 520px;
+  object-fit: contain; /* Ensure image is not cropped */
+  display: block;
+  margin-bottom: 20px;
+  border-radius: 8px;
 }
 
 .product-item__desc {
-  font-size: 14px;
-  color: #666;
-  line-height: 1.5;
-  text-align: left; /* Align text to left for better readability in columns */
+  font-size: 16px;
+  color: rgb(96, 96, 96);
+  line-height: 1.6;
+  text-align: left;
 }
 
 /* === Responsive Styles === */
 @media (max-width: 1024px) {
-  .solution-hero__title {
-    font-size: 48px;
-  }
-
   .products-grid {
     gap: 20px;
   }
@@ -122,12 +193,8 @@
 
 @media (max-width: 768px) {
   .solution-hero {
-    height: 40vh;
-    min-height: 300px;
-  }
-
-  .solution-hero__title {
-    font-size: 36px;
+    height: 100vh;
+    min-height: 500px;
   }
 
   .video-placeholder {
@@ -141,7 +208,11 @@
     gap: 60px;
   }
 
-  .product-item__image {
-    height: 300px;
+  .product-item__desc {
+    min-height: auto;
   }
+
+  // .product-item__image {
+  //   height: 300px;
+  // }
 }

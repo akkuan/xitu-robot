@@ -3,7 +3,7 @@
     <!-- Section 1: Robot Intro (全屏 Banner) -->
     <section class="robot-intro">
       <div class="robot-intro__content" style="padding-left: 5%; width: 100%;">
-        <h1 class="robot-intro__title">Skywalker<span class="dot">.</span></h1>
+        <HeroTitle title="Skywalker" />
       </div>
     </section>
 
@@ -164,28 +164,12 @@ useHead({
   background-image: url('~/assets/images/skywaller/hero.png') !important;
 }
 
-.robot-intro__title {
-  font-size: 35px !important;
-  color: #ffffff !important;
-  font-weight: 500;
-  margin-bottom: 0;
-  margin-top: -15vh; /* Move it up */
-  
-  .dot {
-    color: var(--color-primary);
-  }
-}
-
 .scenario-footer-text {
   font-size: 22px;
   line-height: 1.6;
 }
 
 @media (max-width: 768px) {
-  .robot-intro__title {
-    font-size: 28px !important;
-    margin-top: -10vh;
-  }
   .scenario-footer-text {
     font-size: 18px;
   }

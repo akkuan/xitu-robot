@@ -1,28 +1,16 @@
 <template>
   <div class="page-intelligence">
-    <!-- Section 1: Hero Banner (Dark Background) -->
-    <section class="intelligence-hero">
-      <div class="container">
-        <div class="intelligence-hero__content">
-          <!-- Left: Text -->
-          <div class="intelligence-hero__text">
-            <h1 class="intelligence-hero__title">
-              XITU Intelligence<span style="color: #00dbbd;">.</span>
-            </h1>
-            <p class="intelligence-hero__desc">
-              The Skyeye, our AI system, is a generalist humanoid Vision-Language-Action model that learns and improves over time as it acquires new skills.
-            </p>
-          </div>
-          
-          <!-- Right: Visual (X Graphic) -->
-          <div class="intelligence-hero__visual">
-            <img 
-              src="https://placehold.co/600x600/111/fff?text=X+Graphic" 
-              alt="XITU Intelligence Visual" 
-              class="hero-graphic"
-            />
-          </div>
-        </div>
+    <!-- Section 1: Hero Banner (Full Screen) -->
+    <section class="intelligence-hero" style="background-image: url('/_nuxt/assets/images/intelligence/01.png');">
+      <div class="intelligence-hero__content" style="padding-left: 5%; width: 100%;">
+        <HeroTitle title="XITU Intelligence" />
+      </div>
+      
+      <!-- Description Section (Now part of hero to stick to bottom) -->
+      <div class="intelligence-desc">
+        <p class="hero-desc">
+          The Skyeye, our AI system, is a generalist humanoid Vision-Language-Action model that learns and improves over time as it acquires new skills.
+        </p>
       </div>
     </section>
 
@@ -31,7 +19,7 @@
       <div class="container">
         <div class="intelligence-flow__wrapper">
           <img 
-            src="https://placehold.co/1200x600/fff/333?text=Process+Flow+Diagram" 
+            src="~/assets/images/intelligence/process.png" 
             alt="Intelligence Process Flow" 
             class="intelligence-flow__image"
           />
@@ -46,44 +34,44 @@
           <!-- Feature 1 -->
           <div class="feature-item">
             <div class="feature-item__icon">
-              <img src="https://placehold.co/100x100/fff/00dbbd?text=Icon+1" alt="Icon" />
+              <img src="~/assets/images/intelligence/icon-1.png" alt="Icon 1" />
             </div>
             <h3 class="feature-item__title">Vision-Language Models</h3>
             <p class="feature-item__desc">
-              Advanced multi-modal understanding for complex environments.
+              We’re incorporating the ability for Skywalker to perceive the visual scenes around them, improving awareness of their surroundings.
             </p>
           </div>
 
           <!-- Feature 2 -->
           <div class="feature-item">
             <div class="feature-item__icon">
-              <img src="https://placehold.co/100x100/fff/00dbbd?text=Icon+2" alt="Icon" />
+              <img src="~/assets/images/intelligence/icon-2.png" alt="Icon 2" />
             </div>
             <h3 class="feature-item__title">Voice Interaction</h3>
             <p class="feature-item__desc">
-              Natural language processing for seamless human-robot communication.
+              Speak commands naturally, and Skywalker will understand, provide helpful information, and execute tasks.
             </p>
           </div>
 
           <!-- Feature 3 -->
           <div class="feature-item">
             <div class="feature-item__icon">
-              <img src="https://placehold.co/100x100/fff/00dbbd?text=Icon+3" alt="Icon" />
+              <img src="~/assets/images/intelligence/icon-3.png" alt="Icon 3" />
             </div>
-            <h3 class="feature-item__title">Lidar-based perception</h3>
+            <h3 class="feature-item__title">Lidar-based world perception</h3>
             <p class="feature-item__desc">
-              High-precision spatial awareness and mapping capabilities.
+              Skywalker uses lidar technology to map its surroundings in real-time.
             </p>
           </div>
 
           <!-- Feature 4 -->
           <div class="feature-item">
             <div class="feature-item__icon">
-              <img src="https://placehold.co/100x100/fff/00dbbd?text=Icon+4" alt="Icon" />
+              <img src="~/assets/images/intelligence/icon-4.png" alt="Icon 4" />
             </div>
             <h3 class="feature-item__title">Autonomous obstacle avoidance</h3>
             <p class="feature-item__desc">
-              Real-time path planning and safety navigation systems.
+              Skywalker autonomously avoids obstacles, ensuring smooth navigation in dynamic environments.
             </p>
           </div>
         </div>
@@ -94,19 +82,19 @@
     <section class="intelligence-gallery">
       <!-- Image 1 -->
       <div class="gallery-item">
-        <img src="https://placehold.co/400x300/222/fff?text=Lab+Scene+1" alt="Lab Scene 1" />
+        <img src="~/assets/images/intelligence/robot-1.png" alt="Robot 1" />
       </div>
       <!-- Image 2 -->
       <div class="gallery-item">
-        <img src="https://placehold.co/400x300/333/fff?text=Robot+Arm+2" alt="Robot Arm 2" />
+        <img src="~/assets/images/intelligence/robot-2.png" alt="Robot 2" />
       </div>
       <!-- Image 3 -->
       <div class="gallery-item">
-        <img src="https://placehold.co/400x300/444/fff?text=Factory+3" alt="Factory 3" />
+        <img src="~/assets/images/intelligence/robot-3.png" alt="Robot 3" />
       </div>
       <!-- Image 4 -->
       <div class="gallery-item">
-        <img src="https://placehold.co/400x300/555/fff?text=Interaction+4" alt="Interaction 4" />
+        <img src="~/assets/images/intelligence/robot-4.png" alt="Robot 4" />
       </div>
     </section>
   </div>
