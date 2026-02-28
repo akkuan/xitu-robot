@@ -12,8 +12,7 @@
       <div class="container">
         <div class="video-placeholder">
           <p>
-            Placeholder Video<br>
-            (Factory Collaboration, Logistics) Unmanned / Symbiotic
+            占位元素 待补充内容
           </p>
         </div>
       </div>
@@ -131,8 +130,7 @@
       <div class="container">
         <div class="video-placeholder">
           <p>
-            Placeholder Video<br>
-            (AMR Collaboration Transport)
+             占位元素 待补充内容
           </p>
         </div>
       </div>

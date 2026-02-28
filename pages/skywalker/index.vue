@@ -146,10 +146,6 @@
 </template>
 
 <script setup>
-definePageMeta({
-  path: '/',
-})
-
 useHead({
   title: 'XITU | Skywalker Intelligent Robot',
   meta: [
@@ -162,6 +158,13 @@ useHead({
 // Page specific styles are mostly in assets/scss/home.scss
 .robot-intro {
   background-image: url('~/assets/images/skywaller/hero2.png') !important;
+  position: relative;
+  overflow: hidden;
+}
+
+.robot-intro__content {
+  position: relative;
+  z-index: 2;
 }
 
 .scenario-footer-text {

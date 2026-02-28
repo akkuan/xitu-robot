@@ -7,7 +7,7 @@
       <slot />
     </main>
 
-    <AppFooter :theme="currentTheme" />
+    <AppFooter v-if="!isHome" :theme="currentTheme" />
   </div>
 </template>
 
@@ -17,6 +17,10 @@ const route = useRoute()
 // Compute theme based on route meta, default to 'light'
 const currentTheme = computed(() => {
   return route.meta.theme || 'light'
+})
+
+const isHome = computed(() => {
+  return route.path === '/' || route.path === '/en' || route.path === '/zh'
 })
 </script>
 
