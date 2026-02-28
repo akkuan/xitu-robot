@@ -47,6 +47,7 @@
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 0; /* Remove gaps between images */
+  overflow: hidden;
 }
 
 .gallery-image {
@@ -54,6 +55,7 @@
   aspect-ratio: 6.1 / 7.2; /* Taller image proportion */
   object-fit: cover;
   display: block; /* Remove baseline gaps */
+  transform: scale(1.01); /* Hide potential white edges */
 }
 
 /* === Philosophy & Opportunity Section === */

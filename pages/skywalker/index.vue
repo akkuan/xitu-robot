@@ -161,7 +161,7 @@ useHead({
 <style lang="scss" scoped>
 // Page specific styles are mostly in assets/scss/home.scss
 .robot-intro {
-  background-image: url('~/assets/images/skywaller/hero.png') !important;
+  background-image: url('~/assets/images/skywaller/hero2.png') !important;
 }
 
 .scenario-footer-text {

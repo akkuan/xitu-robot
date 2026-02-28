@@ -16,32 +16,38 @@
   padding: 40px var(--spacing-unit);
 }
 
-.news-grid {
-  display: grid;
-  grid-template-columns: 1.5fr 1fr; /* Left column wider */
+.news-module {
+  display: flex;
   gap: 20px;
-  margin-bottom: 60px;
+  margin-bottom: 20px;
+}
+
+.news-module__left {
+  flex: 7; /* roughly 7:5 ratio to right side or adjust as needed, or we can use fixed aspect ratio */
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.news-module__right {
+  flex: 5;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
 }
 
 .news-item {
   position: relative;
   overflow: hidden;
   cursor: pointer;
-  
-  /* Aspect ratios or heights */
-  height: 400px; /* Default height */
-  
-  &:nth-child(odd) {
-    /* Left column items */
-    height: 450px;
-  }
-  
-  &:nth-child(even) {
-    /* Right column items */
-    height: 450px;
-  }
-  
-  /* Make some items span differently if needed, but simple grid is safer */
+  width: 100%;
+  display: flex;
+  flex: 1; /* Stretch items to fill column height evenly */
+}
+
+/* Ensure the big items have the right aspect ratio if needed, or rely on flex to stretch */
+.news-module__left .big-item {
+  aspect-ratio: 7 / 6;
 }
 
 .news-item__image {
@@ -50,6 +56,7 @@
   object-fit: cover;
   transition: transform 0.6s ease;
   opacity: 0.8; /* Slightly dim images */
+  display: block;
 }
 
 .news-item:hover .news-item__image {
@@ -62,24 +69,25 @@
   bottom: 0;
   left: 0;
   width: 100%;
-  padding: 20px;
+  padding: 16px;
   background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
   pointer-events: none; /* Let clicks pass through to the item */
 }
 
 .news-item__date {
-  font-size: 12px;
+  font-size: 14px;
   color: #aaa;
-  margin-bottom: 5px;
+  margin-bottom: 8px;
   text-transform: uppercase;
   letter-spacing: 1px;
 }
 
 .news-item__title {
-  font-size: 18px;
+  font-size: 20px;
   font-weight: 500;
   color: #fff;
   line-height: 1.4;
+  margin: 0;
 }
 
 /* === Pagination Section === */
@@ -87,52 +95,58 @@
   display: flex;
   align-items: center;
   gap: 20px;
-  padding-bottom: 80px;
+  padding: 60px 0 80px;
 }
 
 .pagination-btn {
   background: none;
-  border: 1px solid #333;
+  border: none; /* No border as requested */
   color: #fff;
-  width: 40px;
-  height: 40px;
+  width: 60px; /* Larger buttons */
+  height: 60px;
   display: flex;
   align-items: center;
   justify-content: center;
   cursor: pointer;
   transition: all 0.3s ease;
-  font-size: 18px;
+  font-size: 28px; /* Larger text */
+  font-weight: 300;
   
   &:hover {
-    border-color: #fff;
-    background-color: #fff;
-    color: #000;
+    color: var(--color-primary); /* Highlight on hover without border */
   }
   
   &:disabled {
     opacity: 0.3;
     cursor: not-allowed;
-    border-color: #333;
-    background-color: transparent;
     color: #fff;
   }
 }
 
 /* === Responsive Styles === */
 @media (max-width: 1024px) {
-  .news-grid {
-    grid-template-columns: 1fr 1fr; /* Equal columns on tablet */
+  .news-module {
+    flex-direction: column;
+  }
+  .news-module__left,
+  .news-module__right {
+    width: 100%;
+  }
+  .news-module__left .big-item {
+    aspect-ratio: auto;
+    height: 400px;
+  }
+  .news-item.small-item {
+    height: 300px;
   }
 }
 
 @media (max-width: 768px) {
-  .news-grid {
-    grid-template-columns: 1fr; /* Single column on mobile */
-    gap: 15px;
+  .news-module__left .big-item {
+    height: 300px;
   }
-  
-  .news-item {
-    height: 300px !important; /* Fixed height for mobile items */
+  .news-item.small-item {
+    height: 250px;
   }
   
   .news-pagination {
