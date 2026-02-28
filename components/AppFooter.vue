@@ -21,9 +21,9 @@
 
         <!-- 右侧区域：订阅 -->
         <div class="site-footer__newsletter">
-          <p>Sign up for news</p>
+          <p>Sign up for more</p>
           <form class="newsletter-form">
-            <input type="email" placeholder="Email" />
+            <input type="email" placeholder="example@email.com" />
             <button type="button">Go</button>
           </form>
           <p style="margin-top: 20px; font-size: 14px">Contact Us</p>

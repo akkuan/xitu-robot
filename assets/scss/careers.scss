@@ -30,11 +30,11 @@
 
 .careers-intro__text {
   flex: 1;
-  max-width: 400px;
+  max-width: 440px;
 }
 
 .careers-intro__desc {
-  font-size: 17px;
+  font-size: 23px;
   line-height: 1.8;
   color: rgb(96, 96, 96);
   font-weight: 500;
@@ -54,7 +54,7 @@
 /* === Jobs List Section === */
 .careers-jobs {
   flex: 1.5; /* Takes more space on the right */
-  margin-top: 100px; /* Create staggered effect: jobs list starts lower than text */
+  margin-top: 240px; /* Create staggered effect: jobs list starts lower than text */
 }
 
 .jobs-list {
@@ -83,15 +83,15 @@
 }
 
 .job-title {
-  font-size: 18px;
-  font-weight: 500;
+  font-size: 23px;
+  font-weight: 600;
   color: #333;
   transition: color 0.3s ease;
 }
 
 .careers-jobs__desc {
   margin-top: 40px;
-  font-size: 17px;
+  font-size: 23px;
   line-height: 1.8;
   color: rgb(96, 96, 96);
 }
@@ -156,7 +156,7 @@
   }
   
   .job-title {
-    font-size: 16px;
+    font-size: 20px;
   }
   
   .culture-image {

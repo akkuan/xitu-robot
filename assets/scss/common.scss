@@ -1,8 +1,22 @@
 /* css/common.css ported to SCSS */
 
+@font-face {
+  font-family: 'ABCOracle';
+  src: url('~/assets/font/ABCOracle-Regular.woff') format('woff');
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'ABCOracle';
+  src: url('~/assets/font/ABCOracle-Thin.woff') format('woff');
+  font-weight: 300;
+  font-style: normal;
+}
+
 :root {
   /* 提取自 UI 稿的配色 */
-  --color-primary: rgb(32, 225, 215); /* 那个亮青色 */
+  --color-primary: rgb(32, 225, 215); /* 亮青色 */
   --color-dark: #1a1a1a;
   --color-grey: #f5f5f5;
   --color-text-main: rgb(96, 96, 96);
@@ -23,7 +37,7 @@
 }
 
 body {
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: "ABCOracle", "Helvetica Neue", Helvetica, Arial, sans-serif;
   color: var(--color-text-main);
   line-height: 1.6;
   background-color: var(--color-white);
@@ -202,11 +216,9 @@ img {
 }
 
 .site-footer__link {
-  font-size: 18px; /* 字体加大 */
+  font-size: 23px;
   color: var(--color-text-main);
-  font-weight: 500;
-
-  /* 每个菜单项下方加分割线 */
+  font-weight: 600;
   width: 100%;
   text-align: right;
   padding-bottom: 15px;
@@ -234,14 +246,20 @@ img {
 }
 
 .newsletter-form input {
-  background-color: #f5f5f5; /* 灰色背景 */
+  background-color: #adadad; /* 灰色背景 */
   border: none;
   outline: none;
+  color:white;
   flex: 1;
   padding: 10px 20px; /* 减小 padding */
   border-radius: 20px 0 0 20px; /* 左上左下圆角 */
   font-size: 14px;
   height: 40px; /* 减小高度 */
+
+  &::placeholder {
+    color: white;
+    opacity: 1; /* 防止默认半透明效果 */
+  }
 }
 
 .newsletter-form button {

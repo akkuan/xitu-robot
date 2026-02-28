@@ -17,7 +17,7 @@
           <!-- Left: Text (Top Left) -->
           <div class="careers-intro__text">
             <p class="careers-intro__desc">
-              ROLES<br><br>
+              ROLES<br>
               We warmly welcome talented individuals <br>
               who want to change our modern lives <br>
               through robotics and create value with us.
@@ -57,9 +57,7 @@
             </ul>
             
             <p class="careers-jobs__desc">
-              XITU has created an equal and efficient work environment,aiming to build a <br>
-              corporate culture of Customer Obsession, Value Creation, and Beginning with <br>
-              the End in Mind.
+              XITU has created an equal and efficient work environment,aiming to build a orporate culture of Customer Obsession, Value Creation, and Beginning with the End in Mind.
             </p>
           </div>
         </div>
