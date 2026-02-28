@@ -10,11 +10,10 @@ export default defineNuxtConfig({
           { code: 'zh', language: 'zh-CN', file: 'zh.json', name: '简体中文' }
     ],
     lazy: true,
-    langDir: 'locales',
+    langDir: './locales',
     defaultLocale: 'en',
     strategy: 'prefix_and_default',
-    detectBrowserLanguage: false,
-    vueI18n: './i18n.config.ts' // Optional, but good practice if we need more config
+    detectBrowserLanguage: false
   },
   // Static Site Generation configuration
   ssr: true, // Must be true for 'nuxt generate' to pre-render HTML

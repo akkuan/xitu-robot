@@ -15,7 +15,7 @@
     "vue-router": "^4.5.0"
   },
   "devDependencies": {
-    "sass": "^1.85.0",
-    "@nuxtjs/i18n": "^8.5.0"
+    "@nuxtjs/i18n": "^9.5.6",
+    "sass": "^1.85.0"
   }
 }
