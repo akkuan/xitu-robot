@@ -10,12 +10,12 @@
             <h2>XITU</h2>
           </div>
           <div class="site-footer__links">
-            <NuxtLink :to="localePath('/')" class="site-footer__link">Skywalker</NuxtLink>
-            <NuxtLink :to="localePath('/intelligence')" class="site-footer__link">{{ $t('nav.intelligence') }}</NuxtLink>
-            <NuxtLink :to="localePath('/solution')" class="site-footer__link">{{ $t('nav.solution') }}</NuxtLink>
-            <NuxtLink :to="localePath('/company')" class="site-footer__link">{{ $t('nav.company') }}</NuxtLink>
-            <NuxtLink :to="localePath('/news')" class="site-footer__link">{{ $t('nav.news') }}</NuxtLink>
-            <NuxtLink :to="localePath('/careers')" class="site-footer__link">{{ $t('nav.careers') }}</NuxtLink>
+            <NuxtLink to="/" class="site-footer__link">Skywalker</NuxtLink>
+            <NuxtLink to="/intelligence" class="site-footer__link">{{ $t('nav.intelligence') }}</NuxtLink>
+            <NuxtLink to="/solution" class="site-footer__link">{{ $t('nav.solution') }}</NuxtLink>
+            <NuxtLink to="/company" class="site-footer__link">{{ $t('nav.company') }}</NuxtLink>
+            <NuxtLink to="/news" class="site-footer__link">{{ $t('nav.news') }}</NuxtLink>
+            <NuxtLink to="/careers" class="site-footer__link">{{ $t('nav.careers') }}</NuxtLink>
           </div>
         </div>
 
@@ -34,7 +34,7 @@
         <span>Terms & Conditions</span>
         <span>Privacy Policy</span>
         <span>Accessibility Statement</span>
-        <span>Copyright © {{ new Date().getFullYear() }} XITU Tech</span>
+        <span>Copyright@2025 XITU Insight Technology</span>
       </div>
     </div>
   </footer>

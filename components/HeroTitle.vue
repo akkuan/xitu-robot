@@ -1,7 +1,5 @@
 <template>
-  <h1 class="hero-title">
-    {{ title }}<span class="dot">.</span>
-  </h1>
+  <h1 class="hero-title">{{ title }}<span class="dot">.</span></h1>
 </template>
 
 <script setup>
@@ -17,9 +15,10 @@ defineProps({
 .hero-title {
   color: #ffffff;
   margin: 0;
-  font-size: 35px;
-  font-weight: 300;
-  margin-top: -15vh;
+  font-size: 52px;
+  font-weight: 600;
+  margin-top: -20vh;
+  letter-spacing: 3px;
 }
 
 .dot {
